@@ -1,0 +1,39 @@
+      test 1 
+      
+      select *
+from invoice
+where invoiceDate Between '2013-01-01' and '2013-12-31'
+
+      test 2
+      
+      select firstname,lastname,country
+from customer
+where
+country = "Brazil"
+or
+country = "India"
+or
+country = "Canada"
+or
+country = "Sweden"
+
+     test 3
+     
+     select track.name, track.composer, album.title
+from track
+left join album
+on album.albumid=track.albumid
+where 
+track.name like 'A%'
+and
+track.composer != "None"
+   
+   
+        test 4
+        
+select customer.Firstname, customer.Lastname, Invoice.total
+from customer
+join invoice
+on customer.customerid=invoice.customerid
+order by invoice.total desc
+limit 10
